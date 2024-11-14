@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from "next/image";
 
 const images = [
     'gallery/image-1.jpg',
@@ -36,7 +37,7 @@ export function Gallery() {
             <div className="aspect-[4/3] relative overflow-hidden rounded-xl">
                 {/* Main Image */}
                 <div className="absolute inset-0">
-                    <img
+                    <Image
                         src={images[currentIndex]}
                         alt={`Gallery image ${currentIndex + 1}`}
                         className="w-full h-full object-cover"
@@ -73,7 +74,7 @@ export function Gallery() {
                             index === currentIndex ? 'ring-2 ring-emerald-500' : ''
                         }`}
                     >
-                        <img
+                        <Image
                             src={image}
                             alt={`Thumbnail ${index + 1}`}
                             className="w-full h-full object-cover"

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image'
 import {
   Ban,
   Car,
@@ -40,7 +41,7 @@ export default function HomePage() {
                 <nav className="fixed w-full z-50 py-4 px-4 bg-white/90 backdrop-blur-sm">
                     <div className="max-w-7xl mx-auto flex justify-between items-center">
                         <div className="flex items-center gap-4">
-                            <img src="/logo.png" alt="Ferienwohnung Landliebe" className="h-16 w-auto"/>
+                            <Image src="/logo.png" alt="Ferienwohnung Landliebe" className="h-16 w-auto"/>
                         </div>
                         <div className="hidden md:flex gap-8 text-gray-800">
                             <a href="#description" className="hover:text-emerald-700">Übersicht</a>
@@ -601,7 +602,7 @@ export default function HomePage() {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         {/* Logo and Description */}
                         <div className="col-span-1 md:col-span-2">
-                            <img
+                            <Image
                                 src="/logo.png"
                                 alt="Ferienwohnung Landliebe"
                                 className="h-16 w-auto mb-4"

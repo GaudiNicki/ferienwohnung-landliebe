@@ -61,7 +61,7 @@ export function AvailabilityCalendar() {
             </div>
 
             <div className="grid grid-cols-7 gap-2">
-                {daysInMonth.map((day, idx) => (
+                {daysInMonth.map((day) => (
                     <div
                         key={day.toString()}
                         className={`
