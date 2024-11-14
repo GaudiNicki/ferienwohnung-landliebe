@@ -1,4 +1,5 @@
 import { Star } from 'lucide-react';
+import Image from 'next/image';
 
 export function HostSection() {
     return (
@@ -8,7 +9,7 @@ export function HostSection() {
                 <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="w-full md:w-1/3">
                         <div className="aspect-square relative rounded-2xl overflow-hidden">
-                            <img
+                            <Image
                                 src="/host.jpg"
                                 alt="Kerstin Witzel"
                                 className="object-cover w-full h-full"
