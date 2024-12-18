@@ -7,7 +7,6 @@ interface GuestRating {
 
 interface Rating {
     overallScore: number,
-    ratingCount: number,
     ratingSummary: string,
     guestRatings: GuestRating[]
 }

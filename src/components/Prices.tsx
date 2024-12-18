@@ -2,7 +2,7 @@ import { Info } from 'lucide-react';
 
 export default function Prices() {
     return (
-        <section id="prices" className="py-20 px-4 bg-gray-50">
+        <section id="prices" className="py-20 px-4 bg-emerald-50">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-3xl font-bold mb-8 text-emerald-800">Preise</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

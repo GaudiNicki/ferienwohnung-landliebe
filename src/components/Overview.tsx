@@ -1,16 +1,6 @@
 import { Home, Users, Wifi, Car, MapPin, Coffee } from 'lucide-react';
 
-const overviewText: string[] = [
-    `Die Ferienwohnung Landliebe liegt in Kerzell, das ist ein Ortsteil von Eichenzell in der Nähe von Fulda.
-    Unsere renovierte gemütliche Altbau-Ferienwohnung für zwei Personen befindet sich im idyllischen Kerzell.
-    Mit dem Auto ist Kerzell ca 8 km südlich von der Stadt Fulda und ist gut über die A7/A66 oder die B27 zu erreichen.`,
-    `Rund um Kerzell gibt es viele Möglichkeiten sich die Zeit zu vertreiben. Wer gerne wandert oder Fahrrad fährt,
-    findet hier einige tolle Wanderwege und Fahrradwege. Der Fahrradweg R1 geht direkt an Kerzell vorbei und führt z.b. nach Fulda.
-    Anspruchsvolle Wanderstrecken gibt es in der nahegelegenen Rhön mit dem Höchsten Berg von Hessen der Wasserkuppe.`
-]
-
 const rating: Rating = {
-    ratingCount: 13,
     overallScore: 9.4,
     ratingSummary: "Hervorragend",
     guestRatings: [
@@ -43,11 +33,16 @@ export default function Overview() {
                     <div className="w-full md:w-2/3">
                         <h2 className="text-3xl font-bold mb-6 text-emerald-800">Ihre Ferienwohnung Landliebe</h2>
                         <div className="prose max-w-none text-gray-600">
-                            { overviewText.map((paragraph, key) => (
-                                <p key={key} className="text-lg mb-4">
-                                    { paragraph }
-                                </p>
-                            ))}
+                            <p className="text-lg mb-4">
+                                Die Ferienwohnung Landliebe liegt in Kerzell, das ist ein Ortsteil von Eichenzell in der Nähe von Fulda. 
+                                Unsere renovierte gemütliche Altbau-Ferienwohnung für zwei Personen befindet sich im idyllischen Kerzell. 
+                                Mit dem Auto ist Kerzell ca 8 km südlich von der Stadt Fulda und ist gut über die A7/A66 oder die B27 zu erreichen.
+                            </p>
+                            <p className="text-lg">
+                                Rund um Kerzell gibt es viele Möglichkeiten sich die Zeit zu vertreiben. Wer gerne wandert oder Fahrrad fährt,
+                                findet hier einige tolle Wanderwege und Fahrradwege. Der Fahrradweg R1 geht direkt an Kerzell vorbei und führt z.b. nach Fulda.
+                                Anspruchsvolle Wanderstrecken gibt es in der nahegelegenen Rhön mit dem Höchsten Berg von Hessen der Wasserkuppe.
+                            </p>
                         </div>
 
                         <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -86,13 +81,12 @@ export default function Overview() {
                                 <span className="text-3xl font-bold text-emerald-600">{rating.overallScore.toString().replace(".", ",")}</span>
                                 <div>
                                     <p className="font-semibold">{rating.ratingSummary}</p>
-                                    <p className="text-sm text-gray-600">{rating.ratingCount} Bewertungen</p>
                                 </div>
                             </div>
                             <div className="space-y-4">
                                 {rating.guestRatings.map((guestRating, key) => (
                                     guestRating.visible &&
-                                        <div key={key} className="border-b pb-4">
+                                        <div key={key} className={key !== rating.guestRatings.length - 1 ? "border-b pb-4" : ""}>
                                             <p className="italic text-gray-600">{guestRating.text}</p>
                                             <p className="text-sm text-gray-500 mt-2">- {guestRating.name}, Bewertung: {guestRating.score} / 10</p>
                                         </div>

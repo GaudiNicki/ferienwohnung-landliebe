@@ -6,7 +6,6 @@ import Gallery from '@/components/Gallery';
 import Amenities from '@/components/Amenities';
 import Contact from '@/components/Contact';
 import LocationMap from '@/components/LocationMap';
-import Rules from '@/components/Rules';
 import Availability from '@/components/Availability';
 import Prices from '@/components/Prices';
 import Footer from '@/components/Footer';
@@ -32,9 +31,6 @@ export default function HomePage() {
 
             {/* Location & Map Section */}
             <LocationMap />
-
-            {/* Rules Section */}
-            <Rules />
 
             {/* Availability Section */}
             <Availability />

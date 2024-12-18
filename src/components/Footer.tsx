@@ -100,12 +100,6 @@ export default function Footer() {
                         <div className="mt-6 text-emerald-100">
                             <p className="text-sm">Diese Unterkunft wird von einem privaten Gastgeber geführt.</p>
                         </div>
-                        <div className="mt-4 text-emerald-100">
-                            <p className="text-sm flex items-center gap-2">
-                                <Star className="text-yellow-400" size={16} />
-                                <span>9,3/10 - Hervorragende Bewertungen</span>
-                            </p>
-                        </div>
                     </div>
                 </div>
 

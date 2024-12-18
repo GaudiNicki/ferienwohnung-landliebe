@@ -5,7 +5,7 @@ import React, { useState, useCallback } from 'react';
 
 const containerStyle = {
     width: '100%',
-    height: '92%',
+    height: '100%',
     minHeight: '400px'
 };
 
@@ -37,7 +37,6 @@ export default function LocationMap() {
                     {/* Map and Address Section */}
                     <div className="lg:col-span-2">
                         <div className="bg-white p-6 rounded-2xl h-full">
-                            <h3 className="text-xl font-semibold mb-4">Adresse</h3>
                             <div className="h-full rounded-lg overflow-hidden">
                                 {!isLoaded ? (
                                     <div className="w-full h-full flex items-center justify-center bg-gray-100">
@@ -80,33 +79,31 @@ export default function LocationMap() {
 
                     {/* Information Section */}
                     <div className="lg:col-span-1 space-y-8">
-                        {/* Distances Section */}
-                        <div className="bg-white p-6 rounded-2xl">
-                            <h3 className="text-xl font-semibold mb-4">Entfernungen</h3>
-                            <ul className="space-y-3">
-                                <li className="flex items-center justify-between">
-                                    <span>Eichenzell Zentrum</span>
-                                    <span className="font-semibold">2,5 km</span>
-                                </li>
-                                <li className="flex items-center justify-between">
-                                    <span>Fulda</span>
-                                    <span className="font-semibold">8 km</span>
-                                </li>
-                                <li className="flex items-center justify-between">
-                                    <span>Wasserkuppe</span>
-                                    <span className="font-semibold">30 km</span>
-                                </li>
-                                <li className="flex items-center justify-between">
-                                    <span>Frankfurt Flughafen</span>
-                                    <span className="font-semibold">105 km</span>
-                                </li>
-                            </ul>
-                        </div>
-
                         {/* Nearby Section */}
                         <div className="bg-white p-6 rounded-2xl">
                             <h3 className="text-xl font-semibold mb-4">In der Nähe</h3>
                             <div className="space-y-6">
+                                <div>
+                                    <h4 className="font-semibold mb-2">Orte</h4>
+                                    <ul className="space-y-2">
+                                        <li className="flex items-center justify-between">
+                                            <span>Eichenzell Zentrum</span>
+                                            <span className="text-gray-600">2,5 km</span>
+                                        </li>
+                                        <li className="flex items-center justify-between">
+                                            <span>Fulda</span>
+                                            <span className="text-gray-600">8 km</span>
+                                        </li>
+                                        <li className="flex items-center justify-between">
+                                            <span>Wasserkuppe</span>
+                                            <span className="text-gray-600">30 km</span>
+                                        </li>
+                                        <li className="flex items-center justify-between">
+                                            <span>Frankfurt Flughafen</span>
+                                            <span className="text-gray-600">105 km</span>
+                                        </li>
+                                    </ul>
+                                </div>
                                 <div>
                                     <h4 className="font-semibold mb-2">Restaurants & Cafés</h4>
                                     <ul className="space-y-2">
