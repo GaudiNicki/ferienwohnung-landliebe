@@ -1,7 +1,7 @@
 'use client';
 
 import { GoogleMap, InfoWindowF, MarkerF, useLoadScript } from '@react-google-maps/api';
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 const containerStyle = {
     width: '100%',
@@ -24,7 +24,7 @@ const mapOptions: google.maps.MapOptions = {
 
 export default function LocationMap() {
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
+        googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || "",
     });
 
     const [isOpen, setIsOpen] = useState(true);
