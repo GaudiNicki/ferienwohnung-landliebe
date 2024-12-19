@@ -91,11 +91,6 @@ export default function Footer() {
                                     Datenschutz
                                 </a>
                             </li>
-                            <li>
-                                <a href="/agb" className="text-emerald-100 hover:text-white transition-colors">
-                                    AGB
-                                </a>
-                            </li>
                         </ul>
                         <div className="mt-6 text-emerald-100">
                             <p className="text-sm">Diese Unterkunft wird von einem privaten Gastgeber geführt.</p>

@@ -1,31 +1,15 @@
-import { Home, Users, Wifi, Car, MapPin, Coffee } from 'lucide-react';
+'use client';
 
-const rating: Rating = {
-    overallScore: 9.4,
-    ratingSummary: "Hervorragend",
-    guestRatings: [
-        {
-            name: "Silke",
-            text: "Eine saubere und gepflegte Ferienwohnung mit netten Vermietern.",
-            score: 10.0,
-            visible: true
-        },
-        {
-            name: "Patricia",
-            text: "atmosphärisches Appartement, liebevoll eingerichtet.",
-            score: 8.0,
-            visible: true
-        },
-        {
-            name: "Martina",
-            text: "Sehr gut ausgestattete Wohnung. Mit viel Liebe zu Detail wurde an alles gedacht.",
-            score: 9.0,
-            visible: true
-        }
-    ]
-}
+import { Home, Users, Wifi, Car, MapPin, Coffee } from 'lucide-react';
+import { useSettingsStore } from '@/store/settings';
 
 export default function Overview() {
+    // Get ratings and overall rating from the store
+    const { ratings, overallRating } = useSettingsStore();
+    
+    // Filter visible ratings
+    const visibleRatings = ratings.filter(rating => rating.visible);
+
     return (
         <section id="overview" className="py-20 px-4 bg-emerald-50">
             <div className="max-w-7xl mx-auto">
@@ -78,20 +62,25 @@ export default function Overview() {
                         <div className="bg-white p-6 rounded-2xl shadow-sm">
                             <h3 className="text-xl font-semibold mb-4">Gästebewertungen</h3>
                             <div className="flex items-center gap-2 mb-4">
-                                <span className="text-3xl font-bold text-emerald-600">{rating.overallScore.toString().replace(".", ",")}</span>
+                                <span className="text-3xl font-bold text-emerald-600">
+                                    {overallRating.score.toString().replace(".", ",")}
+                                </span>
                                 <div>
-                                    <p className="font-semibold">{rating.ratingSummary}</p>
+                                    <p className="font-semibold">{overallRating.summary}</p>
                                 </div>
                             </div>
                             <div className="space-y-4">
-                                {rating.guestRatings.map((guestRating, key) => (
-                                    guestRating.visible &&
-                                        <div key={key} className={key !== rating.guestRatings.length - 1 ? "border-b pb-4" : ""}>
-                                            <p className="italic text-gray-600">{guestRating.text}</p>
-                                            <p className="text-sm text-gray-500 mt-2">- {guestRating.name}, Bewertung: {guestRating.score} / 10</p>
-                                        </div>
-                                    )
-                                )}
+                                {visibleRatings.map((rating, index) => (
+                                    <div 
+                                        key={index} 
+                                        className={index !== visibleRatings.length - 1 ? "border-b pb-4" : ""}
+                                    >
+                                        <p className="italic text-gray-600">{rating.text}</p>
+                                        <p className="text-sm text-gray-500 mt-2">
+                                            - {rating.name}, Bewertung: {rating.score} / 10
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -100,4 +89,3 @@ export default function Overview() {
         </section>
     );
 }
-

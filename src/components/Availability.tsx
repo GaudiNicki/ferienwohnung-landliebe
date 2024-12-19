@@ -1,20 +1,13 @@
 'use client';
 
-import { format, addMonths, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth } from 'date-fns';
+import { format, addMonths, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isWithinInterval, parseISO } from 'date-fns';
 import { de } from 'date-fns/locale';
 import { useState } from 'react';
-
-// Example occupied dates (replace with your actual data)
-const occupiedDates = [
-    '2024-11-01',
-    '2024-11-02',
-    '2024-11-03',
-    '2024-11-15',
-    '2024-11-16',
-];
+import { useSettingsStore } from '@/store/settings';
 
 export default function Availability() {
     const [currentDate, setCurrentDate] = useState(new Date());
+    const { blockedPeriods } = useSettingsStore();
 
     const monthStart = startOfMonth(currentDate);
     const monthEnd = endOfMonth(currentDate);
@@ -29,7 +22,14 @@ export default function Availability() {
     };
 
     const isOccupied = (date: Date) => {
-        return occupiedDates.includes(format(date, 'yyyy-MM-dd'));
+        const formattedDate = format(date, 'yyyy-MM-dd');
+        
+        return blockedPeriods.some(period => {
+            const startDate = parseISO(period.startDate);
+            const endDate = parseISO(period.endDate);
+            
+            return isWithinInterval(date, { start: startDate, end: endDate });
+        });
     };
 
     return (
@@ -69,14 +69,14 @@ export default function Availability() {
                                 <div
                                     key={day.toString()}
                                     className={`
-                        aspect-square flex items-center justify-center rounded-lg text-sm
-                        ${!isSameMonth(day, currentDate) ? 'text-gray-300' : ''}
-                        ${
-                                        isOccupied(day)
-                                            ? 'bg-red-100 text-red-800'
-                                            : 'bg-emerald-100 text-emerald-800'
-                                    }
-                        `}
+                                        aspect-square flex items-center justify-center rounded-lg text-sm
+                                        ${!isSameMonth(day, currentDate) ? 'text-gray-300' : ''}
+                                        ${
+                                            isOccupied(day)
+                                                ? 'bg-red-100 text-red-800'
+                                                : 'bg-emerald-100 text-emerald-800'
+                                        }
+                                    `}
                                 >
                                     {format(day, 'd')}
                                 </div>
