@@ -24,7 +24,7 @@ const mapOptions: google.maps.MapOptions = {
 
 export default function LocationMap() {
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || "",
+        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
     });
 
     const [isOpen, setIsOpen] = useState(true);
