@@ -30,15 +30,7 @@ export default function RatingsManagement() {
     }
   };
 
-  const handleVisibilityToggle = (index: number) => {
-    const visibleCount = ratings.filter(r => r.visible).length;
-    const isCurrentlyVisible = ratings[index].visible;
-    
-    if (!isCurrentlyVisible && visibleCount >= 3) {
-      alert('Maximal 3 Bewertungen können gleichzeitig angezeigt werden.');
-      return;
-    }
-    
+  const handleVisibilityToggle = (index: number) => {    
     const newRatings = [...ratings];
     newRatings[index].visible = !newRatings[index].visible;
     setRatings(newRatings);

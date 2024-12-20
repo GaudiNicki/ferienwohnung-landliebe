@@ -1,7 +1,6 @@
 'use client';
 
 import { Star, Euro, Calendar } from 'lucide-react';
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import RatingsManagement from '@/components/admin/RatingsManagement';
 import PricesManagement from '@/components/admin/PricesManagement';
@@ -9,37 +8,48 @@ import AvailabilityManagement from '@/components/admin/AvailabilityManagement';
 
 export default function AdminDashboard() {
     return (
-        <div className="min-h-screen bg-gray-50 p-8">
+        <div className="min-h-screen bg-gray-50 p-8 sm:p-6 md:p-8">
             <div className="max-w-7xl mx-auto">
-                <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 md:mb-8">Admin Dashboard</h1>
 
-                <Tabs defaultValue="ratings">
-                    <TabsList>
-                        <TabsTrigger value="ratings" className="flex gap-2">
+                <Tabs defaultValue="ratings" className="w-full">
+                    <TabsList className="w-full justify-start flex-wrap gap-2 h-auto bg-transparent p-0">
+                        <TabsTrigger 
+                            value="ratings" 
+                            className="flex gap-2 data-[state=active]:bg-emerald-100"
+                        >
                             <Star size={16} />
-                            Bewertungen
+                            <span className="hidden sm:inline">Bewertungen</span>
                         </TabsTrigger>
-                        <TabsTrigger value="prices" className="flex gap-2">
+                        <TabsTrigger 
+                            value="prices" 
+                            className="flex gap-2 data-[state=active]:bg-emerald-100"
+                        >
                             <Euro size={16} />
-                            Preise
+                            <span className="hidden sm:inline">Preise</span>
                         </TabsTrigger>
-                        <TabsTrigger value="availability" className="flex gap-2">
+                        <TabsTrigger 
+                            value="availability" 
+                            className="flex gap-2 data-[state=active]:bg-emerald-100"
+                        >
                             <Calendar size={16} />
-                            Verfügbarkeit
+                            <span className="hidden sm:inline">Verfügbarkeit</span>
                         </TabsTrigger>
                     </TabsList>
 
-                    <TabsContent value="ratings">
-                        <RatingsManagement />
-                    </TabsContent>
+                    <div className="mt-4 sm:mt-6">
+                        <TabsContent value="ratings">
+                            <RatingsManagement />
+                        </TabsContent>
 
-                    <TabsContent value="prices">
-                        <PricesManagement />
-                    </TabsContent>
+                        <TabsContent value="prices">
+                            <PricesManagement />
+                        </TabsContent>
 
-                    <TabsContent value="availability">
-                        <AvailabilityManagement />
-                    </TabsContent>
+                        <TabsContent value="availability">
+                            <AvailabilityManagement />
+                        </TabsContent>
+                    </div>
                 </Tabs>
             </div>
         </div>

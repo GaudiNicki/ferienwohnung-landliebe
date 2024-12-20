@@ -7,7 +7,7 @@ export default function Prices() {
     const { prices } = useSettingsStore();
 
     return (
-        <section id="prices" className="py-20 px-4 bg-emerald-50">
+        <section id="prices" className="p-8 lg:py-20 lg:px-8 bg-emerald-50">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold mb-8 text-emerald-800">Preise</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

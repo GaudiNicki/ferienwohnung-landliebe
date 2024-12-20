@@ -30,7 +30,7 @@ export default function LocationMap() {
     const [isOpen, setIsOpen] = useState(true);
 
     return (
-        <section id="location" className="py-20 px-4 bg-emerald-50">
+        <section id="location" className="p-8 lg:py-20 lg:px-8 bg-emerald-50">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold mb-8 text-emerald-800">Lage</h2>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 h-full">

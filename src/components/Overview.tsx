@@ -11,10 +11,10 @@ export default function Overview() {
     const visibleRatings = ratings.filter(rating => rating.visible);
 
     return (
-        <section id="overview" className="py-20 px-4 bg-emerald-50">
+        <section id="overview" className="p-8 lg:py-20 lg:px-8 bg-emerald-50">
             <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row gap-12">
-                    <div className="w-full md:w-2/3">
+                <div className="flex flex-col lg:flex-row gap-12">
+                    <div className="w-full lg:w-2/3">
                         <h2 className="text-3xl font-bold mb-6 text-emerald-800">Ihre Ferienwohnung Landliebe</h2>
                         <div className="prose max-w-none text-gray-600">
                             <p className="text-lg mb-4">
@@ -58,7 +58,7 @@ export default function Overview() {
                     </div>
 
                     {/* Reviews Preview */}
-                    <div className="w-full md:w-1/3">
+                    <div className="w-full lg:w-1/3">
                         <div className="bg-white p-6 rounded-2xl shadow-sm">
                             <h3 className="text-xl font-semibold mb-4">Gästebewertungen</h3>
                             <div className="flex items-center gap-2 mb-4">

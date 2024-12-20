@@ -5,7 +5,7 @@ import { Card, CardHeader, CardContent } from '@/components/ui/card';
 
 export default function Contact() {
     return (
-        <section id="contact" className="py-20 px-4 bg-gray-50">
+        <section id="contact" className="p-8 lg:py-20 lg:px-8 bg-gray-50">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold mb-12 text-emerald-800">Kontakt & Buchung</h2>
                 

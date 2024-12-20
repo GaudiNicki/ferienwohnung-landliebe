@@ -35,31 +35,39 @@ export default function AvailabilityManagement() {
   return (
     <Card>
       <CardHeader>
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col lg:flex-row justify-between items-start sm:items-center gap-4">
           <CardTitle>Gesperrte Zeiträume verwalten</CardTitle>
-          <div className="flex align-end gap-2">
-            <div className="flex align-end gap-2">
-              <Input
-                id="new-period-start"
-                type="date"
-                className="w-40"
-                placeholder="Startdatum"
-              />
-              <Input
-                id="new-period-end"
-                type="date"
-                className="w-40"
-                placeholder="Enddatum"
-              />
-              <Input
-                id="new-period-guest"
-                placeholder="Gast"
-                className="w-48"
-              />
-              <Button onClick={handleBlockedPeriodAdd} variant="default" size="sm">
-                <Plus size={16} className="mr-2" />
-                Zeitraum hinzufügen
-              </Button>
+          <div className="w-full lg:w-auto">
+            <div className="flex flex-col lg:flex-row gap-2 w-full">
+              <div className="flex flex-col lg:flex-row gap-2 w-full lg:w-auto">
+                <Input
+                  id="new-period-start"
+                  type="date"
+                  className="w-full h-full lg:w-40"
+                  placeholder="Startdatum"
+                />
+                <Input
+                  id="new-period-end"
+                  type="date"
+                  className="w-full h-full lg:w-40"
+                  placeholder="Enddatum"
+                />
+                <Input
+                  id="new-period-reason"
+                  placeholder="Gast"
+                  className="w-full h-full lg:w-40"
+                />
+                <Button 
+                  onClick={handleBlockedPeriodAdd} 
+                  variant="default" 
+                  size="sm"
+                  className="w-full h-full lg:w-auto"
+                >
+                  <Plus size={16} className="mr-2" />
+                  <span className="hidden sm:inline">Zeitraum hinzufügen</span>
+                  <span className="sm:hidden">Hinzufügen</span>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -67,9 +75,9 @@ export default function AvailabilityManagement() {
       <CardContent>
         <div className="space-y-4">
           {blockedPeriods.sort((a, b) => a.startDate.localeCompare(b.startDate)).map((period) => (
-            <div key={period.id} className="flex items-center justify-between bg-gray-100 p-4 rounded">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
+            <div key={period.id} className="flex flex-row items-start items-center justify-between bg-gray-100 p-4 rounded gap-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full">
+                <div className="flex flex-wrap items-center gap-2">
                   <Calendar size={16} className="text-gray-500" />
                   <span>{format(parseISO(period.startDate), 'dd.MM.yyyy')}</span>
                   <span>-</span>
@@ -85,6 +93,7 @@ export default function AvailabilityManagement() {
                 onClick={() => {
                   setBlockedPeriods(blockedPeriods.filter(p => p.id !== period.id));
                 }}
+                className="self-end sm:self-center"
               >
                 <X size={16} />
               </Button>

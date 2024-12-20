@@ -2,7 +2,7 @@ import { CookingPot, Check, Home, Tv } from 'lucide-react';
 
 export default function Amenities() {
     return (
-        <section id="amenities" className="py-20 px-4 bg-emerald-50">
+        <section id="amenities" className="p-8 lg:py-20 lg:px-8 bg-emerald-50">
             <div className="max-w-7xl mx-auto">
                 <div className="flex items-center justify-between mb-12">
                     <h2 className="text-3xl font-bold text-emerald-800">Ausstattung</h2>
