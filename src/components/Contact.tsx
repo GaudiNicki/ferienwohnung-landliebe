@@ -24,7 +24,7 @@ export default function Contact() {
               <div className="flex flex-col">
                 <div className="flex flex-col md:flex-row gap-6">
                   {/* Host Image */}
-                  <div className="w-full md:w-1/3">
+                  <div className="w-full md:w-1/2">
                     <div className="aspect-square relative rounded-xl overflow-hidden shadow-lg">
                       <Image
                         src="/host.jpg"
@@ -38,7 +38,7 @@ export default function Contact() {
                   </div>
 
                   {/* Host Information */}
-                  <div className="w-full md:w-2/3">
+                  <div className="w-full md:w-1/2">
                     <div className="space-y-4">
                       <div>
                         <h4 className="text-xl font-semibold mb-2">
