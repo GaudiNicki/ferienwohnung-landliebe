@@ -82,7 +82,7 @@ export default function LocationMap() {
                         {/* Nearby Section */}
                         <div className="bg-white p-6 rounded-2xl">
                             <h3 className="text-xl font-semibold mb-4">In der Nähe</h3>
-                            <div className="grid grid-cols-2 gap-x-24 gap-y-8">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-8">
                                 <div>
                                     <h4 className="font-semibold mb-2">Orte</h4>
                                     <ul className="space-y-2">
