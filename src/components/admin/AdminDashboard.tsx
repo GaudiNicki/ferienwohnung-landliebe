@@ -11,7 +11,7 @@ export default function AdminDashboard() {
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 md:mb-8">Admin Dashboard</h1>
 
-                <Tabs defaultValue="ratings" className="w-full">
+                <Tabs defaultValue="prices" className="w-full">
                     <TabsList className="w-full justify-start flex-wrap gap-2 h-auto bg-transparent p-0">
                         <TabsTrigger 
                             value="prices" 
