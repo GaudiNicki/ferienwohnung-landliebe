@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 
 // Replace this with your desired password
-const password = 'Tokelamani01';
+const password = 'your_password_here';
 
 // Generate salt and hash
 const salt = bcrypt.genSaltSync(10);
