@@ -1,8 +1,7 @@
 'use client';
 
-import { Star, Euro, Calendar } from 'lucide-react';
+import { Euro, Calendar } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import RatingsManagement from '@/components/admin/RatingsManagement';
 import PricesManagement from '@/components/admin/PricesManagement';
 import AvailabilityManagement from '@/components/admin/AvailabilityManagement';
 
@@ -14,13 +13,6 @@ export default function AdminDashboard() {
 
                 <Tabs defaultValue="ratings" className="w-full">
                     <TabsList className="w-full justify-start flex-wrap gap-2 h-auto bg-transparent p-0">
-                        <TabsTrigger 
-                            value="ratings" 
-                            className="flex gap-2 data-[state=active]:bg-emerald-100"
-                        >
-                            <Star size={16} />
-                            <span className="hidden sm:inline">Bewertungen</span>
-                        </TabsTrigger>
                         <TabsTrigger 
                             value="prices" 
                             className="flex gap-2 data-[state=active]:bg-emerald-100"
@@ -38,10 +30,6 @@ export default function AdminDashboard() {
                     </TabsList>
 
                     <div className="mt-4 sm:mt-6">
-                        <TabsContent value="ratings">
-                            <RatingsManagement />
-                        </TabsContent>
-
                         <TabsContent value="prices">
                             <PricesManagement />
                         </TabsContent>

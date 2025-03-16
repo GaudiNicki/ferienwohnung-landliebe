@@ -6,44 +6,28 @@ import Image from "next/image";
 
 const images = [
     {
-        src: '/gallery/image-1.jpg',
-        description: 'Lorem ipsum dolor sit amet'
+        src: '/gallery/kueche-sitzecke.jpg',
+        description: 'Sitzeecke in der Küche'
     },
     {
-        src: '/gallery/image-2.jpg',
-        description: 'Lorem ipsum dolor sit amet'
+        src: '/gallery/kueche-kochecke.jpg',
+        description: 'Kochecke in der Küche'
     },
     {
-        src: '/gallery/image-3.jpg',
-        description: 'Lorem ipsum dolor sit amet'
+        src: '/gallery/schlafzimmer-sitzecke.jpg',
+        description: 'Schlafzimmer mit Sitzecke'
     },
     {
-        src: '/gallery/image-4.jpg',
-        description: 'Lorem ipsum dolor sit amet'
+        src: '/gallery/schlafzimmer-doppelbett.jpg',
+        description: 'Doppelbett im Schlafzimmmer'
     },
     {
-        src: '/gallery/image-5.jpg',
-        description: 'Lorem ipsum dolor sit amet'
+        src: '/gallery/bad.jpg',
+        description: 'Bad mit Toilette, Waschbecken und Dusche'
     },
     {
-        src: '/gallery/image-6.jpg',
-        description: 'Lorem ipsum dolor sit amet'
-    },
-    {
-        src: '/gallery/image-7.jpg',
-        description: 'Lorem ipsum dolor sit amet'
-    },
-    {
-        src: '/gallery/image-8.jpg',
-        description: 'Lorem ipsum dolor sit amet'
-    },
-    {
-        src: '/gallery/image-9.jpg',
-        description: 'Lorem ipsum dolor sit amet'
-    },
-    {
-        src: '/gallery/image-10.jpg',
-        description: 'Lorem ipsum dolor sit amet'
+        src: '/gallery/flur.jpg',
+        description: 'Flur'
     }
 ];
 

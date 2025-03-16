@@ -1,4 +1,4 @@
-import { CookingPot, Check, Home, Tv } from 'lucide-react';
+import { CookingPot, Check, Home, BedDouble, Bath, DoorOpen } from 'lucide-react';
 
 export default function Amenities() {
     return (
@@ -17,17 +17,18 @@ export default function Amenities() {
                         </h3>
                         <ul className="space-y-3">
                             {[
-                                'Voll ausgestattete Küche',
+                                'Backofen mit Ceranfeld',
                                 'Geschirrspüler',
+                                'Kühlschrank',
+                                'Gefrierschrank',
                                 'Mikrowelle',
                                 'Kaffeemaschine',
-                                'Kühlschrank',
                                 'Wasserkocher',
                                 'Toaster',
-                                'Küchenzeile',
+                                'Geschirr',
                                 'Küchenutensilien',
-                                'Backofen',
-                                'Herdplatte'
+                                'Sitzgelegenheit',
+                                'Radio'
                             ].map((item) => (
                                 <li key={item} className="flex items-center gap-2">
                                     <Check className="text-emerald-600" size={20}/>
@@ -37,47 +38,39 @@ export default function Amenities() {
                         </ul>
                     </div>
 
-                    {/* Living Area */}
+                    {/* Sleeping Area */}
                     <div className="bg-white p-6 rounded-2xl">
                         <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                            <Home className="text-emerald-600" size={24}/>
-                            Wohnbereich
+                            <BedDouble className="text-emerald-600" size={24}/>
+                            Schlafbereich
                         </h3>
                         <ul className="space-y-3">
                             {[
-                                'Sitzbereich',
-                                'Essbereich',
-                                'Gartenblick',
-                                'Bettwäsche',
-                                'Handtücher',
-                                'Wäscheständer',
-                                'Bügeleisen',
-                                'Holz- oder Parkettböden',
-                                'Heizung'
-                            ].map((item) => (
-                                <li key={item} className="flex items-center gap-2">
-                                    <Check className="text-emerald-600" size={20}/>
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Media & Technology */}
-                    <div className="bg-white p-6 rounded-2xl">
-                        <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                            <Tv className="text-emerald-600" size={24}/>
-                            Medien & Technik
-                        </h3>
-                        <ul className="space-y-3">
-                            {[
-                                'Flachbild-TV',
-                                'Satellitenempfang',
+                                'Doppelbett',
+                                'Fernseher',
                                 'DVD-Player',
-                                'Radio',
-                                'Kostenfreies WLAN',
-                                'TV',
+                                'Sitzgelegenheit',
                                 'Steckdose in Bettnähe'
+                            ].map((item) => (
+                                <li key={item} className="flex items-center gap-2">
+                                    <Check className="text-emerald-600" size={20}/>
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Hallway Area */}
+                    <div className="bg-white p-6 rounded-2xl">
+                        <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <DoorOpen className="text-emerald-600" size={24}/>
+                            Flur
+                        </h3>
+                        <ul className="space-y-3">
+                            {[
+                                'Garderobe',
+                                'Sideboard',
+                                'Sessel'
                             ].map((item) => (
                                 <li key={item} className="flex items-center gap-2">
                                     <Check className="text-emerald-600" size={20}/>
@@ -88,15 +81,19 @@ export default function Amenities() {
                     </div>
                 </div>
 
-                {/* Additional Features */}
+                {/* Bathroom Features */}
                 <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-white p-6 rounded-2xl">
-                        <h3 className="text-xl font-semibold mb-4">Badezimmer</h3>
+                        <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <Bath className="text-emerald-600" size={24}/>
+                            Badezimmer
+                        </h3>
                         <ul className="space-y-3">
                             {[
-                                'Eigenes Badezimmer',
                                 'Dusche',
                                 'WC',
+                                'Waschbecken',
+                                'Spiegelschrank',
                                 'Toilettenpapier',
                                 'Handtücher'
                             ].map((item) => (
@@ -108,14 +105,20 @@ export default function Amenities() {
                         </ul>
                     </div>
 
+                    {/* Additional Features */}
                     <div className="bg-white p-6 rounded-2xl">
-                        <h3 className="text-xl font-semibold mb-4">Außenbereich & Parken</h3>
+                        <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <Home className="text-emerald-600" size={24}/>
+                            Sonstiges
+                        </h3>
                         <ul className="space-y-3">
                             {[
-                                'Kostenfreie Parkplätze an der Straße',
-                                'Gartenblick',
-                                'Nichtraucherbereich',
-                                'Obere Stockwerke nur über Treppe erreichbar'
+                                'Kostenfreies WLAN',
+                                'Kostenfreie Parkplätze',
+                                'Bettwäsche und Handtücher',
+                                'Nichtraucherwohnung',
+                                'Keine Haustiere',
+                                'Ferienwohnung nur über Treppe erreichbar'
                             ].map((item) => (
                                 <li key={item} className="flex items-center gap-2">
                                     <Check className="text-emerald-600" size={20}/>

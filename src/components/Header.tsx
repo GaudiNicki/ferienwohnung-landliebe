@@ -23,17 +23,17 @@ export default function Header() {
         { id: 'overview', label: 'Übersicht' },
         { id: 'gallery', label: 'Bildergalerie' },
         { id: 'amenities', label: 'Ausstattung' },
+        { id: 'prices', label: 'Preise' },
+        { id: 'availability', label: 'Verfügbarkeit' },
         { id: 'contact', label: 'Kontakt & Buchung' },
         { id: 'location', label: 'Lage' },
-        { id: 'availability', label: 'Verfügbarkeit' },
-        { id: 'prices', label: 'Preise' },
     ];
 
     return (
         <header className="relative h-screen max-h-[800px] w-full overflow-hidden">
             <div
-                className="absolute inset-0 bg-cover bg-center brightness-90"
-                style={{backgroundImage: "url('/header.jpg')"}}
+                className="absolute inset-0 bg-left-top bg-cover brightness-90"
+                style={{backgroundImage: "url('/dom.jpg')"}}
             />
             <nav className="fixed w-full z-50 py-4 px-4 bg-[#f8f5f1] backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -84,7 +84,7 @@ export default function Header() {
             <div className="relative z-10 h-full flex items-center justify-center px-4">
                 <div className="text-center text-white">
                     <h2 className="text-5xl md:text-7xl font-bold mb-6">Willkommen in Kerzell</h2>
-                    <p className="text-xl md:text-2xl mb-8">Ihre gemütliche Ferienwohnung in der Rhön</p>
+                    <p className="text-xl md:text-2xl mb-8">Ihre gemütliche Ferienwohnung in der Nähen von Fulda <br/> am Fuße der Rhön</p>
                     <Button
                         onClick={() => handleScrollTo("contact")}
                         className="bg-emerald-600 hover:bg-emerald-700 text-white text-lg font-semibold p-8 rounded-full w-50"

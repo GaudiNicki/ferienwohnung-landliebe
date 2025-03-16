@@ -26,18 +26,18 @@ export default function HomePage() {
             {/* Amenities Section */}
             <Amenities />
 
+            {/* Prices Section */}
+            <Prices />
+
+            {/* Availability Section */}
+            <Availability />
+
             {/* Contact Section */}
             <Contact />
 
             {/* Location & Map Section */}
             <LocationMap />
-
-            {/* Availability Section */}
-            <Availability />
-                   
-            {/* Prices Section */}
-            <Prices />
-          
+            
             {/* Footer */}
             <Footer />
         </div>

@@ -18,19 +18,19 @@ export default function PricesManagement() {
         <div className="grid grid-cols-2 gap-8">
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label>Preis Oktober - April (€)</Label>
+              <Label>1 Person (€)</Label>
               <Input
                 type="number"
-                value={prices.winterPrice}
-                onChange={(e) => setPrices({...prices, winterPrice: parseInt(e.target.value)})}
+                value={prices.onePerson}
+                onChange={(e) => setPrices({...prices, onePerson: parseInt(e.target.value)})}
               />
             </div>
             <div className="space-y-2">
-              <Label>Preis Mai - September (€)</Label>
+              <Label>2 Personen (€)</Label>
               <Input
                 type="number"
-                value={prices.summerPrice}
-                onChange={(e) => setPrices({...prices, summerPrice: parseInt(e.target.value)})}
+                value={prices.twoPersons}
+                onChange={(e) => setPrices({...prices, twoPersons: parseInt(e.target.value)})}
               />
             </div>
           </div>

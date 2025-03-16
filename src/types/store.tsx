@@ -1,15 +1,3 @@
-interface Rating {
-  name: string;
-  text: string;
-  score: number;
-  visible: boolean;
-}
-
-interface OverallRating {
-  score: number;
-  summary: string;
-}
-
 interface BlockedPeriod {
   id: string;
   startDate: string;
@@ -18,8 +6,8 @@ interface BlockedPeriod {
 }
 
 interface Prices {
-  winterPrice: number;
-  summerPrice: number;
+  onePerson: number;
+  twoPersons: number;
   cleaningFee: number;
   minStay: number;
 }

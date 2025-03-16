@@ -1,91 +1,88 @@
-'use client';
+"use client";
 
-import { Home, Users, Wifi, Car, MapPin, Coffee } from 'lucide-react';
-import { useSettingsStore } from '@/store/settings';
+import {
+  Home,
+  Users,
+  Wifi,
+  Car,
+  Ban,
+  Accessibility,
+} from "lucide-react";
 
 export default function Overview() {
-    // Get ratings and overall rating from the store
-    const { ratings, overallRating } = useSettingsStore();
-    
-    // Filter visible ratings
-    const visibleRatings = ratings.filter(rating => rating.visible);
+  
+  return (
+    <section id="overview" className="p-8 lg:py-20 lg:px-8 bg-emerald-50">
+      <div className="max-w-7xl mx-auto">
+        <div className="w-full">
+          <h2 className="text-3xl font-bold mb-6 text-emerald-800">
+            Ihre Ferienwohnung Landliebe
+          </h2>
+          <div className="prose max-w-none text-gray-600">
+            <p className="text-lg mb-4">
+              Die Ferienwohnung Landliebe liegt in Kerzell, einem idyllischen
+              Ortsteil von Eichenzell in der Nähe von Fulda. Unsere renovierte
+              gemütliche Altbau-Ferienwohnung für zwei Personen ist mit dem Auto
+              ca. 8 km südlich von der Stadt Fulda und gut über die A7/A66 oder
+              die B27 zu erreichen.
+            </p>
+            <p className="text-lg mb-4">
+              Rund um Kerzell gibt es viele Möglichkeiten sich die Zeit zu
+              vertreiben. Wer gerne wandert oder Fahrrad fährt, findet hier
+              einige tolle Wege. Die nahegelegene Rhön bietet mit dem höchsten
+              Berg Hessens, der Wasserkuppe (950 m), ein wahres Naturparadies.
+              Hier können Besucher das Radom-Museum besuchen, Gleitschirmflieger
+              beobachten oder im Winter die Skipisten nutzen. Auch die markante
+              Milseburg mit ihrer beeindruckenden Basaltkuppe und das Kloster
+              Kreuzberg mit seiner berühmten Wallfahrtskirche und eigenen
+              Brauerei sind beliebte Ausflugsziele in der Rhön. Das
+              UNESCO-Biosphärenreservat Rhön verzaubert mit seiner einzigartigen
+              Kulturlandschaft aus Hochflächen, sanften Kuppen und artenreichen
+              Wiesen. Besonders sehenswert sind auch das Schwarze Moor und das
+              Rote Moor mit ihren Naturlehrpfaden.
+            </p>
+            <p className="text-lg">
+              Die Barockstadt Fulda bietet mit ihrem Dom, dem Stadtschloss und
+              der historischen Altstadt zahlreiche kulturelle
+              Sehenswürdigkeiten, die einen Tagesausflug wert sind. Besonders
+              sehenswert ist der prachtvolle Schlossgarten mit seinen
+              Brunnenanlagen und der Orangerie. Wer nach einem Stadtbummel durch
+              die Fußgängerzone mit ihren vielen Einkaufsmöglichkeiten eine
+              Pause braucht, findet in den gemütlichen Cafés und Restaurants der
+              Altstadt Erholung. Regelmäßig finden in Fulda auch verschiedene
+              Veranstaltungen und Märkte statt, wie das beliebte Stadtfest oder
+              der traditionelle Weihnachtsmarkt im Dezember.
+            </p>{" "}
+          </div>
 
-    return (
-        <section id="overview" className="p-8 lg:py-20 lg:px-8 bg-emerald-50">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <div className="w-full lg:w-2/3">
-                        <h2 className="text-3xl font-bold mb-6 text-emerald-800">Ihre Ferienwohnung Landliebe</h2>
-                        <div className="prose max-w-none text-gray-600">
-                            <p className="text-lg mb-4">
-                                Die Ferienwohnung Landliebe liegt in Kerzell, das ist ein Ortsteil von Eichenzell in der Nähe von Fulda. 
-                                Unsere renovierte gemütliche Altbau-Ferienwohnung für zwei Personen befindet sich im idyllischen Kerzell. 
-                                Mit dem Auto ist Kerzell ca 8 km südlich von der Stadt Fulda und ist gut über die A7/A66 oder die B27 zu erreichen.
-                            </p>
-                            <p className="text-lg">
-                                Rund um Kerzell gibt es viele Möglichkeiten sich die Zeit zu vertreiben. Wer gerne wandert oder Fahrrad fährt,
-                                findet hier einige tolle Wanderwege und Fahrradwege. Der Fahrradweg R1 geht direkt an Kerzell vorbei und führt z.b. nach Fulda.
-                                Anspruchsvolle Wanderstrecken gibt es in der nahegelegenen Rhön mit dem Höchsten Berg von Hessen der Wasserkuppe.
-                            </p>
-                        </div>
-
-                        <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-6">
-                            <div className="flex items-center gap-2">
-                                <Home className="text-emerald-600" size={20}/>
-                                <span>40 m² Wohnfläche</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Users className="text-emerald-600" size={20}/>
-                                <span>Für 2 Personen</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Wifi className="text-emerald-600" size={20}/>
-                                <span>Kostenloses WLAN</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Car className="text-emerald-600" size={20}/>
-                                <span>Kostenfreie Parkplätze</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <MapPin className="text-emerald-600" size={20}/>
-                                <span>Gute Lage</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Coffee className="text-emerald-600" size={20}/>
-                                <span>Komplett ausgestattet</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Reviews Preview */}
-                    <div className="w-full lg:w-1/3">
-                        <div className="bg-white p-6 rounded-2xl shadow-sm">
-                            <h3 className="text-xl font-semibold mb-4">Gästebewertungen</h3>
-                            <div className="flex items-center gap-2 mb-4">
-                                <span className="text-3xl font-bold text-emerald-600">
-                                    {overallRating.score.toString().replace(".", ",")}
-                                </span>
-                                <div>
-                                    <p className="font-semibold">{overallRating.summary}</p>
-                                </div>
-                            </div>
-                            <div className="space-y-4">
-                                {visibleRatings.map((rating, index) => (
-                                    <div 
-                                        key={index} 
-                                        className={index !== visibleRatings.length - 1 ? "border-b pb-4" : ""}
-                                    >
-                                        <p className="italic text-gray-600">{rating.text}</p>
-                                        <p className="text-sm text-gray-500 mt-2">
-                                            - {rating.name}, Bewertung: {rating.score} / 10
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="flex items-center gap-2">
+              <Home className="text-emerald-600" size={20} />
+              <span>40 m² Wohnfläche</span>
             </div>
-        </section>
-    );
+            <div className="flex items-center gap-2">
+              <Users className="text-emerald-600" size={20} />
+              <span>Für max. 2 Personen</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Wifi className="text-emerald-600" size={20} />
+              <span>Kostenloses WLAN</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Car className="text-emerald-600" size={20} />
+              <span>Kostenfreie Parkplätze</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Accessibility className="text-emerald-600" size={20} />
+              <span>Nicht behindertengerecht</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Ban className="text-emerald-600" size={20} />
+              <span>Nichtraucherwohnung, keine Haustiere</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
