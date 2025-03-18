@@ -33,7 +33,7 @@ export default function Header() {
         <header className="relative h-screen max-h-[800px] w-full overflow-hidden">
             <div
                 className="absolute inset-0 bg-left-top bg-cover brightness-90"
-                style={{backgroundImage: "url('/dom.jpg')"}}
+                style={{backgroundImage: "url('/header.jpg')"}}
             />
             <nav className="fixed w-full z-50 py-4 px-4 bg-[#f8f5f1] backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
