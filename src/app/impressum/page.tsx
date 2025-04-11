@@ -1,12 +1,15 @@
 import React from "react";
-import Header from "@/components/Header";
+import HeaderMainMenu from "@/components/HeaderMainMenu";
 import Footer from "@/components/Footer";
 
 export default function ImpressumPage() {
   return (
     <div className="min-h-screen">
-      {/* Header Section */}
-      <Header />
+      {/* Header Menu */}
+      <HeaderMainMenu />
+
+      {/* Add spacing to compensate for fixed header */}
+      <div className="pt-24"></div>
 
       {/* Impressum Content */}
       <section className="p-8 lg:py-20 lg:px-8 bg-gray-50">

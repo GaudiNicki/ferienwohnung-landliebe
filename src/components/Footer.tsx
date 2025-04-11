@@ -1,12 +1,31 @@
 'use client';
 
 import Image from 'next/image'; 
-import { MapPin, Mail, Star } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { MapPin, Mail } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Footer() {
-
     const [currentYear] = useState(() => new Date().getFullYear());
+    const pathname = usePathname();
+    const isHomePage = pathname === '/';
+
+    const handleScrollTo = (elementId: string) => {
+        if (isHomePage) {
+            // If we're on the home page, scroll to the element
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        } else {
+            // If we're not on the home page, navigate to the home page with the hash
+            window.location.href = `/#${elementId}`;
+        }
+    };
 
     return (
         <footer className="bg-emerald-900 text-white p-8 lg:py-12 lg:px-4">
@@ -14,14 +33,16 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* Logo and Description */}
                     <div className="col-span-1 md:col-span-2">
-                        <Image
-                            src="/logo.png"
-                            alt="Ferienwohnung Landliebe"
-                            width="0" 
-                            height="0"
-                            sizes="100vw"
-                            className="h-24 w-auto mb-4"
-                        />
+                        <Link href="/">
+                            <Image
+                                src="/logo.png"
+                                alt="Ferienwohnung Landliebe"
+                                width="0" 
+                                height="0"
+                                sizes="100vw"
+                                className="h-24 w-auto mb-4"
+                            />
+                        </Link>
                         <p className="text-emerald-100 mb-4">
                             Ihre perfekte Auszeit in der malerischen Rhön - gemütliche Ferienwohnung für 2 Personen
                         </p>
@@ -39,41 +60,24 @@ export default function Footer() {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Navigation</h3>
                         <ul className="space-y-2">
-                            <li>
-                                <a href="#description" className="text-emerald-100 hover:text-white transition-colors">
-                                    Übersicht
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#gallery" className="text-emerald-100 hover:text-white transition-colors">
-                                    Bildergalerie
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#amenities" className="text-emerald-100 hover:text-white transition-colors">
-                                    Ausstattung
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#prices" className="text-emerald-100 hover:text-white transition-colors">
-                                    Preise
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#availability" className="text-emerald-100 hover:text-white transition-colors">
-                                    Verfügbarkeit
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#contact" className="text-emerald-100 hover:text-white transition-colors">
-                                    Kontakt & Buchung
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#location" className="text-emerald-100 hover:text-white transition-colors">
-                                    Lage
-                                </a>
-                            </li>
+                            {[
+                                { id: 'overview', label: 'Übersicht' },
+                                { id: 'gallery', label: 'Bildergalerie' },
+                                { id: 'amenities', label: 'Ausstattung' },
+                                { id: 'prices', label: 'Preise' },
+                                { id: 'availability', label: 'Verfügbarkeit' },
+                                { id: 'contact', label: 'Kontakt & Buchung' },
+                                { id: 'location', label: 'Lage' },
+                            ].map((item) => (
+                                <li key={item.id}>
+                                    <button
+                                        onClick={() => handleScrollTo(item.id)}
+                                        className="text-emerald-100 hover:text-white transition-colors bg-transparent border-none cursor-pointer"
+                                    >
+                                        {item.label}
+                                    </button>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
@@ -82,14 +86,14 @@ export default function Footer() {
                         <h3 className="text-lg font-semibold mb-4">Rechtliches</h3>
                         <ul className="space-y-2">
                             <li>
-                                <a href="/impressum" className="text-emerald-100 hover:text-white transition-colors">
+                                <Link href="/impressum" className="text-emerald-100 hover:text-white transition-colors">
                                     Impressum
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/datenschutz" className="text-emerald-100 hover:text-white transition-colors">
+                                <Link href="/datenschutz" className="text-emerald-100 hover:text-white transition-colors">
                                     Datenschutz
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                         <div className="mt-6 text-emerald-100">
