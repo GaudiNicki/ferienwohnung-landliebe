@@ -1,6 +1,6 @@
 'use client';
 
-import { format, addMonths, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isWithinInterval, parseISO } from 'date-fns';
+import { format, addMonths, startOfMonth, endOfMonth, eachDayOfInterval, isWithinInterval, parseISO, addDays, getDay } from 'date-fns';
 import { de } from 'date-fns/locale';
 import { useState } from 'react';
 import { useSettingsStore } from '@/store/settings';
@@ -13,6 +13,22 @@ export default function Availability() {
     const monthEnd = endOfMonth(currentDate);
     const daysInMonth = eachDayOfInterval({ start: monthStart, end: monthEnd });
 
+    // Get the days from the current month
+    const calendarDays = daysInMonth;
+    
+    // Calculate the day of week for the first day of month (adjusted for Monday start)
+    const firstDayOfMonthIndex = getDay(monthStart);
+    const firstWeekdayIndex = firstDayOfMonthIndex === 0 ? 6 : firstDayOfMonthIndex - 1; // Convert to Monday=0, Sunday=6
+    
+    // Generate the days from the previous month to fill the start of the calendar
+    const prevMonthDays = [];
+    if (firstWeekdayIndex > 0) {
+        const prevMonthEnd = addDays(monthStart, -1);
+        for (let i = firstWeekdayIndex - 1; i >= 0; i--) {
+            prevMonthDays.unshift(addDays(prevMonthEnd, -i));
+        }
+    }
+
     const nextMonth = () => {
         setCurrentDate(addMonths(currentDate, 1));
     };
@@ -22,8 +38,6 @@ export default function Availability() {
     };
 
     const isOccupied = (date: Date) => {
-        const formattedDate = format(date, 'yyyy-MM-dd');
-        
         return blockedPeriods.some(period => {
             const startDate = parseISO(period.startDate);
             const endDate = parseISO(period.endDate);
@@ -65,12 +79,22 @@ export default function Availability() {
                         </div>
 
                         <div className="grid grid-cols-7 gap-2">
-                            {daysInMonth.map((day) => (
+                            {/* Previous month days (greyed out) */}
+                            {prevMonthDays.map((day) => (
+                                <div
+                                    key={`prev-${day.toString()}`}
+                                    className="aspect-square flex items-center justify-center rounded-lg text-sm text-gray-300 bg-gray-50"
+                                >
+                                    {format(day, 'd')}
+                                </div>
+                            ))}
+                            
+                            {/* Current month days */}
+                            {calendarDays.map((day) => (
                                 <div
                                     key={day.toString()}
                                     className={`
                                         aspect-square flex items-center justify-center rounded-lg text-sm
-                                        ${!isSameMonth(day, currentDate) ? 'text-gray-300' : ''}
                                         ${
                                             isOccupied(day)
                                                 ? 'bg-red-100 text-red-800'
@@ -80,6 +104,14 @@ export default function Availability() {
                                 >
                                     {format(day, 'd')}
                                 </div>
+                            ))}
+                            
+                            {/* Empty cells for days after the end of the month */}
+                            {Array.from({ length: (7 - ((prevMonthDays.length + calendarDays.length) % 7)) % 7 }).map((_, index) => (
+                                <div 
+                                    key={`empty-end-${index}`} 
+                                    className="aspect-square rounded-lg"
+                                />
                             ))}
                         </div>
 
