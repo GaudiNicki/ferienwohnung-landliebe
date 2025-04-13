@@ -31,7 +31,10 @@ export default function ImpressumPage() {
                   Kontakt
                 </h2>
                 <div className="space-y-2">
-                  <p>E-Mail: info@ferienwohnunglandliebe.de</p>
+                  <p>E-Mail: <a className="hover:text-emerald-900 transition-colors" href="mailto:info@ferienwohnunglandliebe.de">info@ferienwohnunglandliebe.de</a></p>
+                </div>
+                <div className="space-y-2">
+                  <p>Telefon: <a className="hover:text-emerald-900 transition-colors" href="tel:+4915756041425">+4915756041425</a></p>
                 </div>
               </div>
             </div>

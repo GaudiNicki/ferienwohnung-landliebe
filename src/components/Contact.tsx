@@ -1,4 +1,4 @@
-import { Mail, Send, MapPin, Calendar, Clock, Star } from "lucide-react";
+import { Mail, Send, MapPin, Calendar, Clock, Star, Phone } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
@@ -65,6 +65,15 @@ export default function Contact() {
                             className="hover:text-emerald-900 transition-colors"
                           >
                             kontakt@ferienwohnunglandliebe.de
+                          </a>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Phone className="text-emerald-600 w-5 h-5" />
+                          <a
+                            href="tel:+4915756041425"
+                            className="hover:text-emerald-900 transition-colors"
+                          >
+                            +4915756041425
                           </a>
                         </div>
                         <div className="flex items-center gap-2">

@@ -3,7 +3,7 @@
 import Image from 'next/image'; 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { MapPin, Mail } from 'lucide-react';
+import { MapPin, Mail, Phone } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Footer() {
@@ -53,6 +53,10 @@ export default function Footer() {
                         <div className="mt-4 flex items-center gap-2 text-emerald-100">
                             <Mail size={16} />
                             <a href="mailto:kontakt@ferienwohnunglandliebe.de"><span className="hover:text-emerald-600">kontakt@ferienwohnunglandliebe.de</span></a>
+                        </div>
+                        <div className="mt-4 flex items-center gap-2 text-emerald-100">
+                            <Phone size={16} />
+                            <a href="tel:+4915756041425"><span className="hover:text-emerald-600">+4915756041425</span></a>
                         </div>
                     </div>
 
