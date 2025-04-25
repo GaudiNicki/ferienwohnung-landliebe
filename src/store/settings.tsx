@@ -17,7 +17,14 @@ export const useSettingsStore = create<SettingsStore>()(
         cleaningFee: 40,
         minStay: 2
       },
-      blockedPeriods: [],
+      blockedPeriods: [
+        {
+          id: '1',
+          startDate: '2025-04-25',
+          endDate: '2025-04-27',
+          reason: 'Nicole Martina Hennich'
+        },
+      ],
       setPrices: (prices) => set({ prices }),
       setBlockedPeriods: (blockedPeriods) => set({ blockedPeriods })
     }),
