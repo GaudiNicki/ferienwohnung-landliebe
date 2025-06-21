@@ -56,27 +56,27 @@ export const useSettingsStore = create<SettingsStore>()(
         },
         {
           id: '7',
-          startDate: '2025-08-15',
-          endDate: '2025-08-18',
-          reason: 'Annett Richterin'
-        },
-        {
-          id: '8',
           startDate: '2025-08-21',
           endDate: '2025-08-24',
           reason: 'Ute Hölscher'
         },
         {
-          id: '9',
+          id: '8',
           startDate: '2025-09-08',
           endDate: '2025-09-15',
           reason: 'Urlaub'
         },
         {
-          id: '10',
+          id: '9',
           startDate: '2025-10-03',
           endDate: '2025-10-06',
           reason: 'Saskia van de Post'
+        },
+        {
+          id: '10',
+          startDate: '2025-07-11',
+          endDate: '2025-07-14',
+          reason: 'Rosi Minas'
         },
       ],
       setPrices: (prices) => set({ prices }),
