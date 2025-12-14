@@ -78,6 +78,12 @@ export const useSettingsStore = create<SettingsStore>()(
           endDate: '2025-07-14',
           reason: 'Rosi Minas'
         },
+        {
+          id: '11',
+          startDate: '2026-01-16',
+          endDate: '2026-01-18',
+          reason: 'Gerhard Strelitz'
+        },
       ],
       setPrices: (prices) => set({ prices }),
       setBlockedPeriods: (blockedPeriods) => set({ blockedPeriods })
