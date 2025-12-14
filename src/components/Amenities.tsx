@@ -19,8 +19,7 @@ export default function Amenities() {
                             {[
                                 'Backofen mit Ceranfeld',
                                 'Geschirrspüler',
-                                'Kühlschrank',
-                                'Gefrierschrank',
+                                'Kühlschrank mit Gefrierfach',
                                 'Mikrowelle',
                                 'Kaffeemaschine',
                                 'Wasserkocher',
