@@ -47,7 +47,7 @@ export default function DatenschutzPage() {
                  <p>
                    Die Datenverarbeitung auf dieser Website erfolgt durch den
                    Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt
-                   „Hinweis zur Verantwortlichen Stelle" in dieser
+                   &bdquo;Hinweis zur Verantwortlichen Stelle&ldquo; in dieser
                    Datenschutzerklärung entnehmen.
                  </p>
  
@@ -227,7 +227,7 @@ export default function DatenschutzPage() {
                  <h3 className="text-lg font-medium mt-4 mb-2">Google Maps</h3>
                  <p>
                    Diese Seite nutzt den Kartendienst Google Maps. Anbieter ist
-                   die Google Ireland Limited („Google"), Gordon House, Barrow
+                   die Google Ireland Limited (&bdquo;Google&ldquo;), Gordon House, Barrow
                    Street, Dublin 4, Irland. Mit Hilfe dieses Dienstes können wir
                    Kartenmaterial auf unserer Website einbinden.
                  </p>
@@ -288,7 +288,7 @@ export default function DatenschutzPage() {
                  </p>
                  <p>
                    Das Unternehmen verfügt über eine Zertifizierung nach dem
-                   „EU-US Data Privacy Framework" (DPF). Der DPF ist ein
+                   &bdquo;EU-US Data Privacy Framework&ldquo; (DPF). Der DPF ist ein
                    Übereinkommen zwischen der Europäischen Union und den USA, der
                    die Einhaltung europäischer Datenschutzstandards bei
                    Datenverarbeitungen in den USA gewährleisten soll. Jedes nach
